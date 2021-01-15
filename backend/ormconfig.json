@@ -4,8 +4,8 @@
     "port": 3306,
     "username": "root",
     "password": "",
-    "database": "volt",
-    "synchronize": false,
+    "database": "cria",
+    "synchronize": true,
     "logging": ["error"],
     "entities": [
       "src/entity/*.ts"
