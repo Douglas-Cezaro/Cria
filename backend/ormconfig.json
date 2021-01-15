@@ -1,0 +1,16 @@
+{
+    "type": "mysql",
+    "host": "localhost",
+    "port": 3306,
+    "username": "root",
+    "password": "",
+    "database": "volt",
+    "synchronize": false,
+    "logging": ["error"],
+    "entities": [
+      "src/entity/*.ts"
+    ],
+    "cli": {
+      "entitiesDir": "src/entity"
+    }
+}
