@@ -1,5 +1,4 @@
 docs/*
 app/node_modules
 backend/node_modules
-backend/ormconfig.json
 backend/.env
