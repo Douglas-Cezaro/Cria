@@ -29,7 +29,7 @@ class App {
     this.express.use("/login", loginRouter);
     this.express.use("/user", userRouter);
     this.express.use("/recoverpassword", recoverPasswordRouter);
-    this.express.use("/category", categoryRouter);
+    this.express.use("/categorys", categoryRouter);
     this.express.use("/categorysUser", categorysUserRouter);
     this.express.use("/establishments", establishmentsRouter);
   }

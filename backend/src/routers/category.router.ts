@@ -11,7 +11,7 @@ class Routes {
   }
 
   private init() {
-    this.router.get("/", [validToken.authMiddlewares], categoryController.find);
+    this.router.get("/", /*[validToken.authMiddlewares],*/ categoryController.find);
     this.router.post("/", categoryController.create);
     this.router.get(
       "/:id([0-9]+)",

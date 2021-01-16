@@ -13,7 +13,6 @@ import {
   LogoView,
   InputView,
   Input,
-  Scroller,
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
