@@ -12,7 +12,7 @@ import {
   CardBody,
   Scroller
 } from "../SelectionCategory/styles";
-import { Alert, Text } from "react-native";
+import { Alert } from "react-native";
 import { api } from "../../api";
 import CategoryList from "./categoryList";
 const categoryImg = require('../../../assets/1400x900.png');
@@ -22,11 +22,16 @@ interface Category {
   name: string;
 }
 
+interface CategoryUser {
+  user: number;
+  categorys: number;
+}
+
 export default function SelectionCategory() {
   const navigation = useNavigation();
   const [categorys, setCategorys] = useState<Category[]>([]);
   const [selectedCategorys, setSelectedCategorys] = useState<Category[]>([]);
-
+  const [categoryUser, setCategoryUser] = useState<CategoryUser[]>([]);
 
   const handleGoBack = () => {
     navigation.goBack();
@@ -36,8 +41,13 @@ export default function SelectionCategory() {
     return selectedCategorys.some((item) => item.id === category.id);
   }
 
-  const handleSubmit = () => {
-    console.log(selectedCategorys);
+  const handleSubmit = async () => {
+    api.post("categorysUser", categoryUser).then((resp) => {
+      console.log(resp.data);
+      // aqui faz pular de tela
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
   const handleSelectCategory = (category: Category) => {
@@ -47,22 +57,25 @@ export default function SelectionCategory() {
         (item) => item.id !== category.id
       );
       setSelectedCategorys(selected);
-      
+
     } else {
 
-      if(selectedCategorys.length <= 4){
+      if (selectedCategorys.length <= 4) {
         setSelectedCategorys((previous) => [...previous, category]);
-      }else{
-        Alert.alert("","Limite de categorias atingido!!")
+        const data = { user: 1, categorys: category.id }
+        setCategoryUser((previous) => [...previous, data]);
+
+      } else {
+        Alert.alert("", "Limite de categorias atingido!!")
       }
-      
+
     }
   };
 
   useEffect(() => {
     api.get("categorys").then((resp) => {
       setCategorys(resp.data);
-    }).catch((err) => { 
+    }).catch((err) => {
       console.log(err);
     })
   }, []);
@@ -77,16 +90,16 @@ export default function SelectionCategory() {
       </HeaderArea>
       <Scroller>
         <CategoryList
-        categorys={categorys}
-        onSelectCategory={handleSelectCategory}
-        selectedCategorys={selectedCategorys}
+          categorys={categorys}
+          onSelectCategory={handleSelectCategory}
+          selectedCategorys={selectedCategorys}
         />
       </Scroller>
 
       <ViewConfirmeButton>
         <ConfirmeButton activeOpacity={selectedCategorys.length <= 4 ? 1 : 0.7} onPress={handleSubmit}>
           <ConfirmeText>Tudo Certo!! {selectedCategorys.length}</ConfirmeText>
-        </ConfirmeButton> 
+        </ConfirmeButton>
       </ViewConfirmeButton>
     </Container>
   );
