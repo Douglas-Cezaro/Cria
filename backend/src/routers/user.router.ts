@@ -31,7 +31,7 @@ class Routes {
     this.router.get(
       "/searchSchoolCode",
       userController.searchSchoolCode
-    );  
+    );
   }
 }
 

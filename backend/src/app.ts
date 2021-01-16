@@ -6,6 +6,8 @@ import * as cors from "cors";
 import loginRouter from "./routers/login.router";
 import userRouter from "./routers/user.router";
 import recoverPasswordRouter from "./routers/recoverPassword.router";
+import categoryRouter from "./routers/category.router";
+import categorysUserRouter from "./routers/categoryUser.router";
 
 class App {
   public express: express.Application;
@@ -26,6 +28,8 @@ class App {
     this.express.use("/login", loginRouter);
     this.express.use("/user", userRouter);
     this.express.use("/recoverpassword", recoverPasswordRouter);
+    this.express.use("/category", categoryRouter);
+    this.express.use("/categorysUser", categorysUserRouter);
   }
 }
 

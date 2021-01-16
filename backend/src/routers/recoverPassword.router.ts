@@ -1,5 +1,6 @@
 import { Router } from "express";
 import recuperaSenhaController from "../controller/recoverPassword.controller";
+import validToken from "../middlewares/auth.middlewares";
 
 class Routes {
   public router: Router;

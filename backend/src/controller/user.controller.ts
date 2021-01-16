@@ -2,7 +2,6 @@ import { Request, Response } from "express";
 import { getRepository } from "typeorm";
 import { UserEntity } from "../entity/user.entity";
 import GenToken from "../config/generateToken";
-import { Resolver } from "dns";
 
 const bcrypt = require("bcryptjs");
 
@@ -10,6 +9,11 @@ class UsuarioController {
   public async find(req: Request, res: Response) {
     try {
       const users = await getRepository(UserEntity).find();
+      // getRepository(UserEntity)
+      // .createQueryBuilder("TESTE")  
+      // .leftJoinAndSelect("TESTE.category", "category_user")
+      // .getMany();
+
       res.send(users);
     } catch (error) {
       res.status(500).send(error);

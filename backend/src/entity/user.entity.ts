@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { CategoryUserEntity } from "./categoryUser.entity";
 
 @Entity({ name: "users" })
 export class UserEntity {
@@ -34,4 +35,8 @@ export class UserEntity {
 
   @Column({ nullable: false, type: "datetime" })
   dataReset: Date;
+
+  @OneToMany(type => CategoryUserEntity, category => category.user, { onDelete: "CASCADE" })
+  category : CategoryUserEntity[];
+  
 }
