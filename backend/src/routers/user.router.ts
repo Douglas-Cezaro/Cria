@@ -11,7 +11,7 @@ class Routes {
   }
 
   private init() {
-    this.router.get("/", /*[validToken.authMiddlewares],*/userController.find);
+    this.router.get("/", [validToken.authMiddlewares], userController.find);
     this.router.post("/", userController.create);
     this.router.get(
       "/:id([0-9]+)",
@@ -31,7 +31,7 @@ class Routes {
     this.router.get(
       "/searchSchoolCode",
       userController.searchSchoolCode
-    );  
+    );
   }
 }
 
