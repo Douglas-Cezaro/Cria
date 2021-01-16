@@ -16,7 +16,7 @@ class Routes {
         this.router.post("/", CategoryUserController.create);
         this.router.delete(
             "/:id([0-9]+)",
-            [validToken.authMiddlewares],
+            [validToken.authMiddlewares],   
             CategoryUserController.delete
         );
     }
