@@ -9,8 +9,8 @@ const bcrypt = require("bcryptjs");
 class UsuarioController {
   public async find(req: Request, res: Response) {
     try {
-      const usuarios = await getRepository(UserEntity).find();
-      res.send(usuarios);
+      const users = await getRepository(UserEntity).find();
+      res.send(users);
     } catch (error) {
       res.status(500).send(error);
     }
@@ -62,15 +62,15 @@ class UsuarioController {
 
     try {
       //Busca registro pelo ID
-      const usuario = await getRepository(UserEntity).findOne(id);
+      const user = await getRepository(UserEntity).findOne(id);
 
       //Se não encontrar, devolve erro 404
-      if (!usuario) {
+      if (!user) {
         res.status(404).send({ error: "Usuário não encontrado" });
         return;
       }
 
-      res.send(usuario);
+      res.send(user);
     } catch (error) {
       res.status(500).send(error);
     }
@@ -82,10 +82,10 @@ class UsuarioController {
 
     try {
       //Busca registro pelo ID
-      const usuario = await getRepository(UserEntity).findOne(id);
+      const user = await getRepository(UserEntity).findOne(id);
 
       //Se não encontrar, devolve erro 404
-      if (!usuario) {
+      if (!user) {
         res.status(404).send({ error: "Usuário não encontrado" });
         return;
       }
@@ -93,10 +93,10 @@ class UsuarioController {
       // Não atualiza senha nesse metodo!
       delete novo["password"];
 
-      await getRepository(UserEntity).update(usuario.id, novo);
+      await getRepository(UserEntity).update(user.id, novo);
 
       //Atualiza ID do novo
-      novo.id = usuario.id;
+      novo.id = user.id;
 
       res.send(novo);
     } catch (error) {
@@ -109,18 +109,52 @@ class UsuarioController {
 
     try {
       //Busca registro pelo ID
-      const usuario = await getRepository(UserEntity).findOne(id);
+      const user = await getRepository(UserEntity).findOne(id);
 
       //Se não encontrar, devolve erro 404
-      if (!usuario) {
+      if (!user) {
         res.status(404).send({ error: "Usuário não encontrado!" });
         return;
       }
 
-      await getRepository(UserEntity).delete(usuario);
+      await getRepository(UserEntity).delete(user);
 
       res.status(204).send();
     } catch (error) {
+      res.status(500).send(error);
+    }
+  }
+
+  public async searchSchoolCode(req: Request, res: Response) {
+    try {
+
+      const { codSchool } = req.body;
+
+      // valida concistencia do dado!
+      if (!codSchool) {
+        return res.status(404).send({ error: "Código CMG nãoinformado!" });
+      }
+
+      // Buscar Usuário pelo Código de CGM "Código geral de matricula"
+      const user = await getRepository(UserEntity).findOne({
+        where: [
+          {
+            codSchool: codSchool,
+          },
+        ],
+      });
+
+      // Valida Existencia do Usuário
+      if (!user) {
+        return res.status(404).send({ error: "Código invalido, valide a chave com a secretaria da sua escola!" });
+      }
+
+      user.password = undefined;
+
+      return res.status(200).send(user);
+
+    }
+    catch (error) {
       res.status(500).send(error);
     }
   }

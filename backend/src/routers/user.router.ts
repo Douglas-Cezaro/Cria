@@ -28,6 +28,10 @@ class Routes {
       [validToken.authMiddlewares],
       userController.delete
     );
+    this.router.get(
+      "/searchSchoolCode",
+      userController.searchSchoolCode
+    );  
   }
 }
 
