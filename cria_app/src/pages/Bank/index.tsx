@@ -58,7 +58,7 @@ export default function Bank() {
               fontSize: 25,
             }}
           >
-            ****     ****     ****     1245
+            **** **** **** 1245
           </Text>
           <Text
             style={{
@@ -95,7 +95,7 @@ export default function Bank() {
         </View>
       </CardBody>
       <AreaSubTitle>
-        <SubTitle>Atalhos Rapidos</SubTitle>
+        <SubTitle>Atalhos Rápidos</SubTitle>
       </AreaSubTitle>
       <AreaAtalhos>
         <AtalhoItem>
@@ -108,7 +108,7 @@ export default function Bank() {
         </AtalhoItem>
         <AtalhoItem>
           <Fontisto name="arrow-swap" size={50} color="white" />
-          <AtalhoTitle>Historico</AtalhoTitle>
+          <AtalhoTitle>Transferência</AtalhoTitle>
         </AtalhoItem>
       </AreaAtalhos>
     </Container>
