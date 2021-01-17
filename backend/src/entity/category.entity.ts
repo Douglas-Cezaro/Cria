@@ -10,6 +10,9 @@ export class CategoryEntity {
     @Column({ nullable: false })
     name: String;
 
+    @Column()
+    urlimg: String;
+
     @OneToMany(type => CategoryUserEntity, categorys => categorys.categorys, { onDelete: "CASCADE" })
     categorys : CategoryUserEntity[];
 }
