@@ -4,11 +4,11 @@ import { StyleSheet } from "react-native";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #ffffff;
+  background-color: #f7f4f7;
 `;
 export const Headertitle = styled.View`
-  align-items: center;
-  background-color: #ffffff;
+  align-items : center;
+  background-color: #f7f4f7;
 `;
 
 export const Title = styled.Text`
