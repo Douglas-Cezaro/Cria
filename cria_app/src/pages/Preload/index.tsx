@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, LoadingIcon } from "./styles";
+import { Container } from "./styles";
 import { useNavigation } from "@react-navigation/native";
 import Loading from "../../components/Loading";
 import { AsyncStorage } from "react-native";
