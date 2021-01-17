@@ -8,6 +8,7 @@ import PasswordUser from "../pages/PasswordUser";
 import SelectionCategory from "../pages/SelectionCategory";
 import Preload from "../pages/Preload";
 import TabBar from "./tabNavigation";
+import StoreDetails from "../pages/StoreDetails";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,7 @@ export default function Routes() {
         <Stack.Screen name="PasswordUser" component={PasswordUser} />
         <Stack.Screen name="SelectionCategory" component={SelectionCategory} />
         <Stack.Screen name="MainTab" component={TabBar} />
+        <Stack.Screen name="StoreDetails" component={StoreDetails} />
       </Stack.Navigator>
     </NavigationContainer>
   );
