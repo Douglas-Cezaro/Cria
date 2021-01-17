@@ -1,6 +1,6 @@
 import { Router } from "express";
 import validToken from "../middlewares/auth.middlewares";
-import establishmentsController from '../controller/establishments.controller';
+import establishmentsController from "../controller/establishments.controller";
 
 class Routes {
   public router: Router;
@@ -11,7 +11,10 @@ class Routes {
   }
 
   private init() {
-    this.router.get("/", [validToken.authMiddlewares], establishmentsController.find);
+    this.router.get(
+      "/",
+      /*[validToken.authMiddlewares], */ establishmentsController.find
+    );
     this.router.post("/", establishmentsController.create);
     this.router.get(
       "/:id([0-9]+)",
@@ -29,7 +32,6 @@ class Routes {
       establishmentsController.delete
     );
   }
-  
 }
 
 export default new Routes().router;
