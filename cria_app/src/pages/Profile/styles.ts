@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components/native";
+import { StyleSheet } from "react-native";
+
 
 export const Container = styled.View`
   flex: 1;
   background-color: #ffffff;
-  padding : 20px
 `;
 export const Headertitle = styled.View`
   align-items : center;
@@ -48,7 +49,7 @@ export const ProfileImg = styled.Image`
   border-radius: 50px;
 `;
 
-export const CardScore = styled.View`
+export const CardScore = styled.TouchableOpacity`
     height : 200px;
     background-color: #fd5555;
     border-radius: 20px;
@@ -85,7 +86,7 @@ export const CardSeparator = styled.View`
 `;
 
 export const CardScoreGroup = styled.View`
-  padding-top : 50px;
+  /* padding-top : 50px; */
   margin-left : 25px;
 `;
 
@@ -140,14 +141,12 @@ export const Barra2 = styled.View`
   border-color : #D9D9D9;
 `; 
 export const CardSelectGroup = styled.View`
+  background-color: white;
   flex: 1;
-  flex-direction : row;
-  flex-wrap : wrap;
-  justify-content : space-between;
-  margin-top: 10px;
+  min-height: 500px;
 `;
 
-export const CardSelectItem = styled.View`
+export const CardSelectItem = styled.TouchableOpacity`
     height : 155px;
     width: 170px;
     border-width: 0px;
@@ -163,3 +162,37 @@ export const TitleCardSelec = styled.Text`
   color : #FFF;
   font-weight: bold;
 `;
+
+export const CardSecoreIcon = styled.View`
+  margin-left : 150px;
+`;
+
+export const GroupSpace = styled.View`
+  padding : 20px;
+`;
+
+export const Styles = StyleSheet.create({
+  containerStyle: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    borderWidth: 1,
+    borderTopEndRadius: 20,
+    borderTopStartRadius: 20,
+    borderColor: "#ddd",
+    borderBottomWidth: 0,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 13,
+    zIndex: 10,
+    margin: 8,
+    marginLeft: 5,
+    marginRight: 5,
+    marginTop: 0,
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
+});

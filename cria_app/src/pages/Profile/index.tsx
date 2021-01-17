@@ -22,63 +22,73 @@ import {
   Barra,
   Barra2,
   GroupBarras,
+  GroupSpace,
   CardSelectGroup,
   CardSelectItem,
-  TitleCardSelec
-
+  TitleCardSelec,
+  CardSecoreIcon,
+  Styles
 } from "./styles";
 
+import { FontAwesome5 } from '@expo/vector-icons';
 const profileImg = require("../../../assets/1400x900.png");
+
 
 export default function Profile() {
   return (
     <Container>
-      <Headertitle>
-        <Title>Perfil</Title>
-      </Headertitle>
 
-      <ProfileBody>
-        <ProfileImg source={profileImg} />
-        <ProfileDescription>
-          <ProfileTitle>
-            Guilherme Emanuel Pires
+      <GroupSpace>
+        <Headertitle>
+          <Title>Perfil</Title>
+        </Headertitle>
+
+        <ProfileBody>
+          <ProfileImg source={profileImg} />
+          <ProfileDescription>
+            <ProfileTitle>
+              Hellen Ariane
           </ProfileTitle>
-          <ProfileDesc>
-            Faculdade Materdei
+            <ProfileDesc>
+              Instituto Federal de Ouro Preto
           </ProfileDesc>
-          <ProfileDesc>
-            23 Anos
+            <ProfileDesc>
+              19 Anos
           </ProfileDesc>
-        </ProfileDescription>
-      </ProfileBody>
+          </ProfileDescription>
+        </ProfileBody>
 
-      <CardScore>
-        <GroupNumbers>
-          <CardNivelGroup>
-            <CardNivel>2</CardNivel>
-            <CardNivelDesc>Nível:</CardNivelDesc>
-          </CardNivelGroup>
+        <CardScore>
+          <GroupNumbers>
+            <CardNivelGroup>
+              <CardNivel>2</CardNivel>
+              <CardNivelDesc>Nível:</CardNivelDesc>
+            </CardNivelGroup>
 
-          <CardSeparator></CardSeparator>
+            <CardSeparator></CardSeparator>
 
-          <CardScoreGroup>
-            <CardNivelDesc>Score:</CardNivelDesc>
-            <GroupScoreDesc>
-              <CardScore2>720</CardScore2>
-              <CardNivelDesc2>/100 pontos</CardNivelDesc2>
-            </GroupScoreDesc>
-          </CardScoreGroup>
-        </GroupNumbers>
-        {/* <Progress>
+            <CardScoreGroup>
+              <CardSecoreIcon>
+                <FontAwesome5 name="medal" size={50} color="#F2BB16" />
+              </CardSecoreIcon>
+              <CardNivelDesc>Score:</CardNivelDesc>
+              <GroupScoreDesc>
+                <CardScore2>720</CardScore2>
+                <CardNivelDesc2>/100 pontos</CardNivelDesc2>
+              </GroupScoreDesc>
+            </CardScoreGroup>
+          </GroupNumbers>
+          {/* <Progress>
           <GroupBarras>
             <Barra></Barra>
             <Barra2></Barra2>
           </GroupBarras>
         </Progress> */}
-      </CardScore>
-
-      <CardSelectGroup>
-        <CardSelectItem>
+        </CardScore>
+      </GroupSpace>
+      
+      <CardSelectGroup style={Styles.containerStyle}>
+        <CardSelectItem >
           <TitleCardSelec>Pesquisa</TitleCardSelec>
         </CardSelectItem>
         <CardSelectItem>
