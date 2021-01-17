@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components/native";
 import { Ionicons, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import { State } from "react-native-gesture-handler";
 
 const TabArea = styled.View`
   height: 60px;
@@ -19,6 +18,8 @@ export const styles = StyleSheet.create({
     borderRadius: 35,
     backgroundColor: "#fd5555",
     marginTop: -20,
+    marginRight: 10,
+    marginLeft: 10,
   },
   TabItem: {
     flex: 1,
