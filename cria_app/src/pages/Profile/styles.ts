@@ -5,11 +5,11 @@ import { StyleSheet } from "react-native";
 
 export const Container = styled.View`
   flex: 1;
-  background-color: #ffffff;
+  background-color: #f7f4f7;
 `;
 export const Headertitle = styled.View`
   align-items : center;
-  background-color: #ffffff;
+  background-color: #f7f4f7;
 `;
 
 export const Title = styled.Text`
@@ -139,7 +139,7 @@ export const Barra2 = styled.View`
   border-radius : 50px;
   border : 1px;
   border-color : #D9D9D9;
-`; 
+`;
 export const CardSelectGroup = styled.View`
   background-color: white;
   flex: 1;
