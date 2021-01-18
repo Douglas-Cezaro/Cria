@@ -2,16 +2,15 @@ import React from "react";
 import styled from "styled-components/native";
 import { StyleSheet } from "react-native";
 
-
 export const Styles = StyleSheet.create({
   active: {
-    opacity: 0.6,
+    opacity: 0.5,
   },
   inactive: {
-    backgroundColor: '#7e8389',
+    // backgroundColor: "#7e8389",
     // borderWidth: 2,
     // borderRadius: 10,
-  }
+  },
 });
 
 export const Container = styled.View`
@@ -40,7 +39,7 @@ export const BackButton = styled.TouchableOpacity`
 
 export const Scroller = styled.ScrollView`
   flex: 1;
-  top : 50px;
+  top: 50px;
 `;
 
 export const ViewConfirmeButton = styled.View`
@@ -68,32 +67,32 @@ export const ConfirmeText = styled.Text`
 
 export const CardBody = styled.View`
   flex: 1;
-  flex-direction : row;
-  flex-wrap : wrap;
-  justify-content : space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `;
 
 export const CardItens = styled.TouchableOpacity`
-  align-items : center;
+  align-items: center;
 `;
 
 export const CardLabel = styled.Text`
   color: #7e8389;
   margin-bottom: 2px;
   margin-top: 8px;
-  font-size : 20px;
-  font-weight : bold;
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 export const CardImage = styled.View`
-  height : 150px;
+  height: 150px;
   width: 150px;
   border-width: 2px;
   border-radius: 10px;
 `;
 
 export const GroupIcons = styled.View`
-  flex : 1;
-  align-items : center;
-   padding-top : 10px;
+  flex: 1;
+  align-items: center;
+  padding-top: 10px;
 `;

@@ -8,7 +8,7 @@ export default function Preload() {
   const navigation = useNavigation();
   setTimeout(() => {
     navigation.navigate("SelectProfile");
-  }, 500);
+  }, 1000);
   return (
     <Container>
       <Logo source={logo} />
