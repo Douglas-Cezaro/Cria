@@ -27,17 +27,21 @@ import {
   CardSelectItem,
   TitleCardSelec,
   CardSecoreIcon,
-  Styles
+  Styles,
 } from "./styles";
 
-import { FontAwesome5 } from '@expo/vector-icons';
+import {
+  FontAwesome5,
+  FontAwesome,
+  Entypo,
+  AntDesign,
+  Ionicons,
+} from "@expo/vector-icons";
 const profileImg = require("../../../assets/1400x900.png");
-
 
 export default function Profile() {
   return (
     <Container>
-
       <GroupSpace>
         <Headertitle>
           <Title>Perfil</Title>
@@ -46,15 +50,9 @@ export default function Profile() {
         <ProfileBody>
           <ProfileImg source={profileImg} />
           <ProfileDescription>
-            <ProfileTitle>
-              Hellen Ariane
-          </ProfileTitle>
-            <ProfileDesc>
-              Instituto Federal de Ouro Preto
-          </ProfileDesc>
-            <ProfileDesc>
-              19 Anos
-          </ProfileDesc>
+            <ProfileTitle>Hellen Ariane</ProfileTitle>
+            <ProfileDesc>Instituto Federal de Ouro Preto</ProfileDesc>
+            <ProfileDesc>19 Anos</ProfileDesc>
           </ProfileDescription>
         </ProfileBody>
 
@@ -74,7 +72,7 @@ export default function Profile() {
               <CardNivelDesc>Score:</CardNivelDesc>
               <GroupScoreDesc>
                 <CardScore2>720</CardScore2>
-                <CardNivelDesc2>/100 pontos</CardNivelDesc2>
+                <CardNivelDesc2>/1000 pontos</CardNivelDesc2>
               </GroupScoreDesc>
             </CardScoreGroup>
           </GroupNumbers>
@@ -86,24 +84,25 @@ export default function Profile() {
         </Progress> */}
         </CardScore>
       </GroupSpace>
-      
+
       <CardSelectGroup style={Styles.containerStyle}>
-        <CardSelectItem >
+        <CardSelectItem>
+          <FontAwesome name="search" size={50} color="white" />
           <TitleCardSelec>Pesquisa</TitleCardSelec>
         </CardSelectItem>
         <CardSelectItem>
+          <Entypo name="trophy" size={50} color="white" />
           <TitleCardSelec>Sala de Trofeus</TitleCardSelec>
         </CardSelectItem>
         <CardSelectItem>
+          <AntDesign name="user" size={50} color="white" />
           <TitleCardSelec>Perfil</TitleCardSelec>
         </CardSelectItem>
         <CardSelectItem>
+          <Ionicons name="document-attach-outline" size={50} color="white" />
           <TitleCardSelec>Currículo</TitleCardSelec>
         </CardSelectItem>
       </CardSelectGroup>
-
-
     </Container>
-
   );
 }

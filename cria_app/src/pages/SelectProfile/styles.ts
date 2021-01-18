@@ -45,14 +45,22 @@ export const SwipeDotActive = styled.View`
 `;
 
 export const SwipeItem = styled.View`
-  height: 440px;
-  width: 340px;
+  height: 360px;
+  width: 360px;
+`;
+
+export const SwipeTitle = styled.Text`
+  font-size: 20px;
+  color: #707070;
 `;
 
 export const SwipeImage = styled.Image`
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
+  background-color: #e7e6e6;
   border-radius: 15px;
+  border-color: #707070;
+  border-width: 2px;
 `;
 
 export const FakeSwiper = styled.View`

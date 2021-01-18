@@ -8,61 +8,62 @@ export const Container = styled.View`
 `;
 
 export const Headertitle = styled.View`
-  align-items : center;
+  align-items: center;
   background-color: #f7f4f7;
 `;
 
 export const Title = styled.Text`
   font-size: 25px;
   color: #7e8389;
-  margin-top :40px;
+  margin-top: 40px;
+  font-weight: bold;
 `;
 
 export const CardProduct = styled.View`
-  height : 100px;
+  height: 100px;
   border-radius: 20px;
   border: 2px;
-  border-color : #ddd;  
-  margin-top : 10px;
+  border-color: #ddd;
+  margin-top: 10px;
 `;
 
 export const CardProductTitle = styled.Text`
-  margin-left : 20px;
-  margin-top : 10px;
-  color :  #fd5555;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: #fd5555;
   font-size: 16px;
   font-weight: bold;
 `;
 
 export const CardOptionGroup = styled.View`
   flex: 1;
-  flex-direction : row;
-  flex-wrap : wrap;
-  justify-content : space-between;
-  margin-top : 10px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 10px;
 `;
 
 export const CardOptionItem = styled.TouchableOpacity`
-  height : 120px;
-  width : 120px;
-  border-radius : 20px;
-  background-color : #fd5555;
-  align-items : center;
+  height: 120px;
+  width: 120px;
+  border-radius: 20px;
+  background-color: #fd5555;
+  align-items: center;
 `;
 
 export const CardOptionIcon = styled.View`
-  padding-top : 15px;
+  padding-top: 15px;
 `;
 
 export const CardOptionTitle = styled.Text`
   font-weight: bold;
   color: #ffffff;
   font-size: 15px;
-  margin-top : 10px
+  margin-top: 10px;
 `;
 
 export const GroupSpace = styled.View`
-  padding : 20px;
+  padding: 20px;
 `;
 
 export const GroupRanking = styled.View`
@@ -70,8 +71,8 @@ export const GroupRanking = styled.View`
 `;
 
 export const RankingHead = styled.View`
-  align-items : center;
-  padding : 5px;
+  align-items: center;
+  padding: 5px;
 `;
 
 export const RankTitle = styled.Text`
@@ -80,14 +81,14 @@ export const RankTitle = styled.Text`
 `;
 
 export const GroupHead = styled.View`
-  flex-direction : row;
-  justify-content : space-between;
-  height : 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 50px;
 `;
 
 export const GroupHeadTitle = styled.View`
-  flex-direction : row;
-  justify-content : space-between;
+  flex-direction: row;
+  justify-content: space-between;
 `;
 
 export const GroupTitle = styled.Text`
@@ -104,26 +105,24 @@ export const GroupTitle3 = styled.Text`
 `;
 
 export const LineSeparator = styled.View`
-  background-color : #7e8389;
-  height : 1px;
-  margin-top : 10px;
-  margin-bottom : 20px;
+  background-color: #7e8389;
+  height: 1px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 `;
 
 export const ProfileBody = styled.View`
-  height : 100px;
-  flex-direction : row;
+  height: 100px;
+  flex-direction: row;
 `;
 
 export const ProfileImg = styled.Image`
-  height : 30px;
+  height: 30px;
   width: 30px;
   border-radius: 50px;
 `;
 
-export const Scroller = styled.ScrollView`
-  
-`;
+export const Scroller = styled.ScrollView``;
 
 export const Styles = StyleSheet.create({
   containerStyle: {
@@ -147,5 +146,6 @@ export const Styles = StyleSheet.create({
     paddingTop: 10,
     paddingLeft: 10,
     paddingRight: 10,
+    minHeight: 350,
   },
 });

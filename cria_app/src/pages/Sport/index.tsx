@@ -3,8 +3,7 @@ import {
   FontAwesome,
   FontAwesome5,
   AntDesign,
-  MaterialIcons,
-  MaterialCommunityIcons,
+  Ionicons,
 } from "@expo/vector-icons";
 import {
   Container,
@@ -24,44 +23,20 @@ import {
   CardDistance,
   CardDistanceText,
   CardImage,
-  AreaAtalhos,
-  AtalhoItem,
-  AtalhoTitle,
-  Scroller,
+  CardAreaTitle,
+  BackButton,
 } from "./styles";
 import { useNavigation } from "@react-navigation/native";
-import { api } from "../../api";
-import { View } from "react-native";
 
 interface Search {
   id: number;
   description: string;
 }
 
-interface Store {
-  id: number;
-  name: string;
-  description: string;
-  latitude: number;
-  longitude: number;
-}
-
-export default function Store() {
+export default function Sport() {
   const [search, setSearch] = useState("");
   const [arraySearch, setArraySearch] = useState<Search[]>([]);
   const navigation = useNavigation();
-  const [stores, SetStores] = useState<Store[]>([]);
-
-  useEffect(() => {
-    api
-      .get("establishments")
-      .then((resp) => {
-        SetStores(resp.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   const addSearch = () => {
     const id = Math.random() * 10;
@@ -72,8 +47,8 @@ export default function Store() {
     setArraySearch((previous) => [...previous, data]);
   };
 
-  const handleDetails = (data) => {
-    navigation.navigate("StoreDetails", data);
+  const handleGoBack = () => {
+    navigation.goBack();
   };
 
   const removeSearch = (search) => {
@@ -84,7 +59,10 @@ export default function Store() {
   return (
     <Container>
       <HeaderArea>
-        <HeaderTitle>Comércios</HeaderTitle>
+        <BackButton onPress={handleGoBack}>
+          <Ionicons name="arrow-back-outline" size={50} color="#7E8389" />
+        </BackButton>
+        <HeaderTitle>Esportes</HeaderTitle>
       </HeaderArea>
       <MarketArea>
         <MarketInput
@@ -111,9 +89,25 @@ export default function Store() {
         ))}
       </Options>
       <Card>
-        {stores.map((store) => (
-          <View key={store.id}>
-            <CardBody onPress={() => handleDetails(store)}>
+        <CardBody>
+          <CardImage>
+            <FontAwesome5 name="store" size={24} color="#fd5555" />
+          </CardImage>
+
+          <CardTitle>Educação Financeira Sebrae</CardTitle>
+          <CardAreaTitle>
+            <CardSubtitle>Duração 2h</CardSubtitle>
+            <CardSubtitle>Duração 2h</CardSubtitle>
+          </CardAreaTitle>
+
+          <CardDistance>
+            <CardDistanceText>C$ 0,00</CardDistanceText>
+          </CardDistance>
+        </CardBody>
+        <CardSeparator />
+        {/* {stores.map((store) => (
+          <>
+            <CardBody key={store.id} onPress={() => handleDetails(store)}>
               <CardImage>
                 <FontAwesome5 name="store" size={24} color="#fd5555" />
               </CardImage>
@@ -125,29 +119,9 @@ export default function Store() {
               </CardDistance>
             </CardBody>
             <CardSeparator />
-          </View>
-        ))}
+          </>
+        ))} */}
       </Card>
-      <Scroller>
-        <AreaAtalhos>
-          <AtalhoItem>
-            <MaterialCommunityIcons
-              name="currency-usd"
-              size={50}
-              color="white"
-            />
-            <AtalhoTitle>Promoções</AtalhoTitle>
-          </AtalhoItem>
-          <AtalhoItem>
-            <MaterialIcons name="receipt" size={50} color="white" />
-            <AtalhoTitle>Vouchers</AtalhoTitle>
-          </AtalhoItem>
-          <AtalhoItem>
-            <MaterialIcons name="work" size={50} color="white" />
-            <AtalhoTitle>Vagas</AtalhoTitle>
-          </AtalhoItem>
-        </AreaAtalhos>
-      </Scroller>
     </Container>
   );
 }

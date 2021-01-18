@@ -58,7 +58,7 @@ export default function Bank() {
               fontSize: 25,
             }}
           >
-            **** **** **** 1245
+            ****     ****     ****     1245
           </Text>
           <Text
             style={{

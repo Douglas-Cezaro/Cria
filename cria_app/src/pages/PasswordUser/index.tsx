@@ -15,7 +15,7 @@ import {
 } from "./styles";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-const logo = require("../../../assets/1400x900.png");
+const logo = require("../../../assets/block.png");
 import { Keyboard } from "react-native";
 import * as Animatable from "react-native-animatable";
 import { styles } from "../CheckCode/styles";
