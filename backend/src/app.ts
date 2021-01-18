@@ -9,6 +9,9 @@ import recoverPasswordRouter from "./routers/recoverPassword.router";
 import categoryRouter from "./routers/category.router";
 import categorysUserRouter from "./routers/categoryUser.router";
 import establishmentsRouter from "./routers/establishments.router";
+import courseRouter from "./routers/curse.router";
+
+
 
 class App {
   public express: express.Application;
@@ -32,6 +35,7 @@ class App {
     this.express.use("/categorys", categoryRouter);
     this.express.use("/categorysUser", categorysUserRouter);
     this.express.use("/establishments", establishmentsRouter);
+    this.express.use("/course", courseRouter);
   }
 }
 

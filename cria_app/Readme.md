@@ -12,7 +12,7 @@
 		<a href="https://github.com/guilhermeemanuelpires">
 	    <img src="https://img.shields.io/badge/author-GuilhermePires-pink">
 	</a>
-    <a href="https://github.com/Douglas-Cezaro/SocialHack/search?l=TSX">
+    <a href="https://github.com/Douglas-Cezaro/Cria/search?l=typescript">
 	    <img src="https://img.shields.io/badge/made%20with-typescript-blue">
 	</a>
 </p>

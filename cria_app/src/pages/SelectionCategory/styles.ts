@@ -85,9 +85,15 @@ export const CardLabel = styled.Text`
   font-weight : bold;
 `;
 
-export const CardImage = styled.Image`
-  height : 200px;
+export const CardImage = styled.View`
+  height : 150px;
   width: 150px;
   border-width: 2px;
   border-radius: 10px;
+`;
+
+export const GroupIcons = styled.View`
+  flex : 1;
+  align-items : center;
+   padding-top : 10px;
 `;
