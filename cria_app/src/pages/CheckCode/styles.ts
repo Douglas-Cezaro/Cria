@@ -55,7 +55,7 @@ export const Logo = styled.Image`
 export const styles = StyleSheet.create({
   logo: {
     height: 400,
-    width: "75%",
+    width: "100%",
   },
 });
 

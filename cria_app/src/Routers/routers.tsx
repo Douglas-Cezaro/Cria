@@ -9,6 +9,9 @@ import SelectionCategory from "../pages/SelectionCategory";
 import Preload from "../pages/Preload";
 import TabBar from "./tabNavigation";
 import StoreDetails from "../pages/StoreDetails";
+import Entrepreneur from "../pages/Entrepreneur";
+import Culture from "../pages/Culture";
+import Sport from "../pages/Sport";
 
 const Stack = createStackNavigator();
 
@@ -16,7 +19,7 @@ export default function Routes() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="SelectProfile"
+        initialRouteName="Preload"
         headerMode="none"
         screenOptions={{
           cardStyle: {
@@ -32,6 +35,9 @@ export default function Routes() {
         <Stack.Screen name="SelectionCategory" component={SelectionCategory} />
         <Stack.Screen name="MainTab" component={TabBar} />
         <Stack.Screen name="StoreDetails" component={StoreDetails} />
+        <Stack.Screen name="Entrepreneur" component={Entrepreneur} />
+        <Stack.Screen name="Culture" component={Culture} />
+        <Stack.Screen name="Sport" component={Sport} />
       </Stack.Navigator>
     </NavigationContainer>
   );

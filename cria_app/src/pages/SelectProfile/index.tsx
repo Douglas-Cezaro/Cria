@@ -12,6 +12,7 @@ import {
   HeaderArea,
   BackButton,
   HeaderTitle,
+  SwipeTitle,
 } from "./styles";
 import Swiper from "react-native-swiper";
 import { useNavigation } from "@react-navigation/native";
@@ -39,9 +40,9 @@ export default function CheckCode() {
 
   const userInfo = {
     photos: [
-      { url: require("../../../assets/1400x900.png") },
-      { url: require("../../../assets/2560x1600.png") },
-      { url: require("../../../assets/1400x900.png") },
+      { name: "Jovem", url: require("../../../assets/profile.png") },
+      { name: "Comercio", url: require("../../../assets/profile.png") },
+      { name: "Escola", url: require("../../../assets/profile.png") },
     ],
   };
   return (
@@ -54,7 +55,11 @@ export default function CheckCode() {
       </HeaderArea>
       {userInfo.photos && userInfo.photos.length > 0 ? (
         <Swiper
-          style={{ height: 450, top: 100, left: 15 }}
+          style={{
+            height: 450,
+            top: 100,
+            left: 15,
+          }}
           dot={<SwipeDot />}
           activeDot={<SwipeDotActive />}
           on
@@ -66,6 +71,7 @@ export default function CheckCode() {
         >
           {userInfo.photos.map((item, key) => (
             <SwipeItem key={key}>
+              <SwipeTitle>{item.name}</SwipeTitle>
               <SwipeImage source={item.url} />
             </SwipeItem>
           ))}

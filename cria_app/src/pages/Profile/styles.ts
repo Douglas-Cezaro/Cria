@@ -7,7 +7,7 @@ export const Container = styled.View`
   background-color: #f7f4f7;
 `;
 export const Headertitle = styled.View`
-  align-items : center;
+  align-items: center;
   background-color: #f7f4f7;
 `;
 
@@ -57,7 +57,7 @@ export const CardScore = styled.TouchableOpacity`
 
 export const GroupNumbers = styled.View`
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 `;
 
 export const CardNivelGroup = styled.View`
@@ -91,7 +91,7 @@ export const CardScoreGroup = styled.View`
 `;
 
 export const CardScore2 = styled.Text`
-  font-size: 70px;
+  font-size: 50px;
   font-weight: bold;
   color: #fff;
 `;
@@ -154,18 +154,18 @@ export const CardSelectItem = styled.TouchableOpacity`
   background-color: #fd5555;
   margin-bottom: 10px;
   align-items: center;
+  justify-content: center;
 `;
 
 export const TitleCardSelec = styled.Text`
-  padding-top: 120px;
   font-size: 15px;
   color: #fff;
   font-weight: bold;
 `;
 
 export const CardSecoreIcon = styled.View`
-  margin-left: 280px;
-  bottom: 180px;
+  margin-left: 180px;
+  /* bottom: 180px; */
 `;
 
 export const GroupSpace = styled.View`

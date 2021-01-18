@@ -10,3 +10,7 @@ export const Container = styled.SafeAreaView`
 export const LoadingIcon = styled.ActivityIndicator`
   margin-top: 50px;
 `;
+export const Logo = styled.Image`
+  width: 100%;
+  height: 700px;
+`;

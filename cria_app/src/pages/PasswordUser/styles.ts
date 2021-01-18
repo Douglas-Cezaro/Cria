@@ -39,8 +39,8 @@ export const LogoView = styled.View`
 `;
 
 export const Logo = styled.Image`
-  height: 400px;
-  width: 75%;
+  height: 600px;
+  width: 100%;
 `;
 
 export const ViewInput = styled.View`

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components/native";
 import { Ionicons, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { Alert, BackHandler, StyleSheet, TouchableOpacity } from "react-native";
 
 const TabArea = styled.View`
   height: 60px;
@@ -35,6 +35,26 @@ export default ({ state, navigation }) => {
   const goTo = (screenName) => {
     navigation.navigate(screenName);
   };
+  useEffect(() => {
+    const backAction = () => {
+      Alert.alert("", "Quer realmente fechar o aplicativo", [
+        {
+          text: "Cancelar",
+          onPress: () => null,
+          style: "cancel",
+        },
+        { text: "Sim", onPress: () => BackHandler.exitApp() },
+      ]);
+      return true;
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, []);
 
   return (
     <TabArea>
